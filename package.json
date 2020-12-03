@@ -1,11 +1,11 @@
 {
   "name": "tsiot",
   "version": "1.0.0",
-  "description": "TDD",
+  "description": "BDD",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec",
-	  "coverage": "nyc --reporter=html mocha"
+    "test": "clear && cucumber-js --publish-quiet",
+    "coverage": "nyc --reporter=html cucumber-js --publish-quiet"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/ciror00/TSIoT/issues"
   },
-  "homepage": "https://github.com/ciror00/TSIoT#readme"
+  "homepage": "https://github.com/ciror00/TSIoT#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.0.0-rc.0",
+    "chai": "^4.2.0",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "exclude": "features/**" 
+  }  
 }
